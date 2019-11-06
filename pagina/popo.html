@@ -1,0 +1,178 @@
+<nav class="navbar navbar-default" role="navigation">
+  <!-- El logotipo y el icono que despliega el menú se agrupan
+       para mostrarlos mejor en los dispositivos móviles -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse"
+            data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Desplegar navegación</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Logotipo</a>
+  </div>
+ 
+  <!-- Agrupar los enlaces de navegación, los formularios y cualquier
+       otro elemento que se pueda ocultar al minimizar la barra -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Enlace #1</a></li>
+      <li><a href="#">Enlace #2</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          Menú #1 <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Acción #1</a></li>
+          <li><a href="#">Acción #2</a></li>
+          <li><a href="#">Acción #3</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Acción #4</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Acción #5</a></li>
+        </ul>
+      </li>
+    </ul>
+ 
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Buscar">
+      </div>
+      <button type="submit" class="btn btn-default">Enviar</button>
+    </form>
+ 
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">Enlace #3</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          Menú #2 <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Acción #1</a></li>
+          <li><a href="#">Acción #2</a></li>
+          <li><a href="#">Acción #3</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Acción #4</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Navigation -->
+ <link rel="icon" href="http://collectivecloudperu.com/blogdevs/wp-content/uploads/2017/09/cropped-favicon-1-32x32.png">
+
+    <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+    <!-- Custom styles for this template -->
+
+
+    <link href="../css/estilos.css" rel="stylesheet">
+
+<!-- Latest compiled and minified JavaScript -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+     <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse"
+            data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Desplegar navegación</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="../index.php">"FSyB"</a>
+
+  </div>
+      <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="nav navbar-nav navbar-right" id="bs-example-navbar-collapse-1">
+    <div id="notification-header">
+              <div style="position:relative">
+                <button id="notification-icon" name="button" onclick="myFunction()" class="dropbtn"><span id="notification-count"><?php if($count>0) { echo $count; } ?></span><img src="../img/icono.png" /></button>
+                <div id="notification-latest"></div>
+              </div>          
+            </div></li>
+          
+
+        </div>
+
+         <?php if(isset($message)) { ?> <div class="error"><?php echo $message; ?></div> <?php } ?>
+          <?php if(isset($success)) { ?> <div class="success"><?php echo $success;?></div> <?php } ?>
+              
+     
+<script src="https://code.jquery.com/jquery-2.1.1.min.js" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../js/jquery.min.js"><\/script>')</script>
+    <script src="../js/popper.min.js"></script>
+    
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <script type="text/javascript">
+      function myFunction() {
+        $.ajax({
+          url: "notificaciones.php",
+          type: "POST",
+          processData:false,
+          success: function(data){
+            $("#notification-count").remove();                  
+            $("#notification-latest").show();$("#notification-latest").html(data);
+          },
+          error: function(){}           
+        });
+      }
+                                 
+      $(document).ready(function() {
+        $('body').click(function(e){
+          if ( e.target.id != 'notification-icon'){
+            $("#notification-latest").hide();
+          }
+        });
+      });                                     
+    </script>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.php">Inicio <span class="sr-only">(current)</span></a></li>
+        <li><a href="modalcliente/listacliente.php">Cliente</a></li>
+         <li class="active"><a href="modalautomovil/listaauto.php">Automovil <span class="sr-only">(current)</span></a></li>
+           <li><a href="modalservicio/listaservicio.php">serivicio</a></li>
+ <li class="active"><a href="modalempresa/listaempresa.php">Almacen <span class="sr-only">(current)</span></a></li>
+            <li><a href="modalempleado/listaEmpleados.php">Empleados</a></li>
+            
+            <li class="active"><a href="#">Pedidos</a></li>
+            <li ><a href="modalarticulo/listaarticulo.php">Articulos<span class="sr-only">(current)</span></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cliente <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+             <li><a href="index.php">Bienvenido <strong>"<?php echo $_SESSION['usuario'];?>"</strong> </a></li>
+     
+            <li><a href="backup2.php">respaldo base de datos</a></li>
+           
+             <li><a href="../desconectar.php">Salir</a></li>
+          </ul>
+        </li>
+      </ul>
+  
+   
+ 
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
